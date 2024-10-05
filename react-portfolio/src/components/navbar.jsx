@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function Navbar() {
-  const [activeLink, setActiveLink] = useState("#about");
+export default function Navbar({ activeLink, handleLinkChange }) {
+ 
 
   return (
     <>
@@ -9,40 +9,35 @@ export default function Navbar() {
         <h1 style={logoStyle}>Eric Neff</h1>
         <div style={linksContainerStyle}>
           <a
-            href="#about"
-            style={activeLink === "#about" ? activeLinkStyle : linkStyle}
-            onClick={() => setActiveLink("#about")}
+            href="/about"
+            style={activeLink === "/about" ? activeLinkStyle : linkStyle}
+            onClick={() => handleLinkChange("/about")}
           >
             About Me
           </a>
           <a
-            href="#portfolio"
-            style={activeLink === "#portfolio" ? activeLinkStyle : linkStyle}
-            onClick={() => setActiveLink("#portfolio")}
+            href="/portfolio"
+            style={activeLink === "/portfolio" ? activeLinkStyle : linkStyle}
+            onClick={() => handleLinkChange("/portfolio")}
           >
             Portfolio
           </a>
           <a
-            href="#resume"
-            style={activeLink === "#resume" ? activeLinkStyle : linkStyle}
-            onClick={() => setActiveLink("#resume")}
+            href="/resume"
+            style={activeLink === "/resume" ? activeLinkStyle : linkStyle}
+            onClick={() => handleLinkChange("/resume")}
           >
             Resume
           </a>
           <a
-            href="#contact"
-            style={activeLink === "#contact" ? activeLinkStyle : linkStyle}
-            onClick={() => setActiveLink("#contact")}
+            href="/contact"
+            style={activeLink === "/contact" ? activeLinkStyle : linkStyle}
+            onClick={() => handleLinkChange("/contact")}
           >
             Contact
           </a>
         </div>
       </nav>
-      <img
-        src="../public/images/fretboard.jpg"
-        alt="Header Background"
-        style={imageStyle}
-      />
       <style>{mediaStyles}</style>
     </>
   );
@@ -52,31 +47,83 @@ const navStyle = {
   position: "fixed",
   top: 0,
   left: 0,
-  right: 0,
+  width: "100%",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  padding: "15px 20px", // Increased padding for 50% taller header
+  padding: "15px 20px",
   backgroundColor: "#282c34",
   zIndex: 1000,
   flexWrap: "wrap",
+  height: "155px",
+  backgroundImage: "url('/images/fretboard.jpg')",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  overflow: "hidden",
+  boxSizing: "border-box",
 };
+
+const overlayStyle = `
+  nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: -1;
+  }
+`;
+
+const mediaStyles = `
+  ${overlayStyle}
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 37.5px;
+    }
+
+    div {
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  }
+`;
 
 const logoStyle = {
   margin: 0,
   color: "#fff",
-  fontSize: "30px", // Increased font size by 25%
+  fontSize: "45px",
+  zIndex: 1001,
+  textShadow: "2px 2px 5px black",
 };
 
 const linksContainerStyle = {
   display: "flex",
-  gap: "30px",
+  justifyContent: "space-evenly",
+  gap: "15px",
+  flexGrow: 1,
+  zIndex: 1001,
+  flexWrap: "wrap",
+  boxSizing: "border-box",
+  maxWidth: "100%",
 };
 
 const linkStyle = {
   color: "#fff",
   textDecoration: "none",
-  fontSize: "22.5px", // Increased font size by 25%
+  fontSize: "27px",
+  textShadow: "2px 2px 5px black",
 };
 
 const activeLinkStyle = {
@@ -84,40 +131,3 @@ const activeLinkStyle = {
   fontWeight: "bold",
   borderBottom: "2px solid #fff",
 };
-
-// Image style to snap below the header and fill the width of the screen
-const imageStyle = {
-  position: "fixed",
-  top: "75px", // Adjusted to match the increased height of your navbar
-  left: 0,
-  width: "100%",
-  height: "auto",
-  zIndex: 500, // Ensures the image stays below the navbar
-};
-
-// Media query for screen sizes 511px or smaller
-const mediaStyles = `
-  @media (max-width: 606px) {
-    nav {
-      flex-direction: column;
-      align-items: center;
-      padding: 22.5px; /* Increased padding for 50% taller header */
-    }
-
-    h1 {
-      margin-bottom: 10px;
-      text-align: center;
-      font-size: 30px; /* Increased font size by 25% */
-    }
-
-    div {
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    img {
-      top: 120px; /* Adjusted to match the increased height of the navbar on mobile */
-    }
-  }
-`;

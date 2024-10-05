@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-export default function ContactForm() {
+export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 485);
 
-  // Check if screen width is less than or equal to 485 pixels
+ 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 485);
     window.addEventListener("resize", handleResize);
@@ -30,7 +30,7 @@ export default function ContactForm() {
     }
   };
 
-  // Adjust styles based on screen size
+  
   const adjustedFormStyle = {
     ...formStyle,
     maxWidth: isMobile ? "480px" : "640px",
@@ -60,6 +60,27 @@ export default function ContactForm() {
   };
 
   return (
+    <div
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      minHeight: '100vh',
+      width: '100vw', // Use full viewport width
+      boxSizing: 'border-box', // Ensure padding is considered within the width
+    }}
+  >
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column', // Stacks elements vertically
+        alignItems: 'center', // Centers content
+        padding: '0 20px', // Adds padding to the sides
+        maxWidth: '800px', // Limits the width of the content
+        width: '100%', // Ensures content scales with max width
+        boxSizing: 'border-box', // Ensure padding is considered within the width
+      }}
+    >
     <form style={adjustedFormStyle}>
       <div style={inputContainerStyle}>
         <label htmlFor="name">Name:</label>
@@ -95,10 +116,11 @@ export default function ContactForm() {
       </div>
       <button type="submit" style={adjustedButtonStyle}>Submit</button>
     </form>
+    </div>
+    </div>
   );
 }
 
-// Base styles for form and input elements
 const formStyle = {
   display: "flex",
   flexDirection: "column",

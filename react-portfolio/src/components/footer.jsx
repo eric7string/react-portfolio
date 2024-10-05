@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
         <FontAwesomeIcon icon={faLinkedin} size="2x" style={iconStyle} />
       </a>
       <a href="https://x.com/eric7string" target="_blank" rel="noopener noreferrer">
-        <FontAwesomeIcon icon={faTwitter} size="2x" style={iconStyle} />
+        <FontAwesomeIcon icon={faXTwitter} size="2x" style={iconStyle} />
       </a>
     </footer>
   );
