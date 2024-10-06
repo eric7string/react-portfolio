@@ -17,16 +17,35 @@ export default function Contact() {
     });
   };
 
-  const handleBlur = (e) => {
-    if (e.target.value.trim() === "") {
-      alert(`${e.target.name} field cannot be empty!`);
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent form submission
+
+    const { name, email, message } = formData;
+
+    // Validate all fields
+    if (name.trim() === "") {
+      alert("Name field cannot be empty!");
+      return;
     }
-    if (e.target.name === "email" && e.target.value.trim() !== "") {
-      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      if (!emailPattern.test(e.target.value)) {
-        alert("Please enter a valid email address.");
-      }
+
+    if (email.trim() === "") {
+      alert("Email field cannot be empty!");
+      return;
     }
+
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    if (message.trim() === "") {
+      alert("Message field cannot be empty!");
+      return;
+    }
+
+    // If all validations pass, you can proceed with form submission logic here
+    console.log("Form submitted successfully:", formData);
   };
 
   const adjustedFormStyle = {
@@ -79,7 +98,7 @@ export default function Contact() {
           boxSizing: 'border-box',
         }}
       >
-        <form style={adjustedFormStyle}>
+        <form style={adjustedFormStyle} onSubmit={handleSubmit}>
           <div style={inputContainerStyle}>
             <label htmlFor="name">Name:</label>
             <input
@@ -87,7 +106,6 @@ export default function Contact() {
               name="name"
               value={formData.name}
               onChange={handleInputChange}
-              onBlur={handleBlur}
               style={adjustedInputStyle}
             />
           </div>
@@ -98,7 +116,6 @@ export default function Contact() {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              onBlur={handleBlur}
               style={adjustedInputStyle}
             />
           </div>
@@ -108,7 +125,6 @@ export default function Contact() {
               name="message"
               value={formData.message}
               onChange={handleInputChange}
-              onBlur={handleBlur}
               style={adjustedTextAreaStyle}
             />
           </div>
