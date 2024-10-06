@@ -6,30 +6,29 @@ export default function Resume() {
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: '100vh',
-        width: '100vw', // Use full viewport width
-        boxSizing: 'border-box', // Ensure padding is considered within the width
+        width: '100vw',
+        boxSizing: 'border-box',
       }}
     >
       <div
         style={{
           display: 'flex',
-          flexDirection: 'column', // Stacks elements vertically
-          alignItems: 'center', // Centers content
-          padding: '0 20px', // Adds padding to the sides
-          maxWidth: '800px', // Limits the width of the content
-          width: '100%', // Ensures content scales with max width
-          boxSizing: 'border-box', // Ensure padding is considered within the width
+          flexDirection: 'column',
+          alignItems: 'center',
+          padding: '0 20px',
+          maxWidth: '800px',
+          width: '100%',
+          boxSizing: 'border-box',
         }}
       >
-        {/* Add your image here */}
         <img 
-          src="./images/resume.jpg" // Replace with the correct path to your image
+          src="./images/resume.jpg"
           alt="Resume preview"
           style={{
             maxWidth: '50%',
             height: 'auto',
             marginBottom: '20px',
-            borderRadius: '10px', // Adds a border radius
+            borderRadius: '10px',
           }}
         />
         

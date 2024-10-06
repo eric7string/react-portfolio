@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 export default function Navbar({ handleLinkChange }) {
   const location = useLocation();
-  const activeLink = location.pathname; // Get the current path
+  const activeLink = location.pathname; 
 
   return (
     <>
@@ -51,9 +51,9 @@ const navStyle = {
   left: 0,
   width: "100%",
   display: "flex",
-  justifyContent: "center", // Center all content
+  justifyContent: "center", 
   alignItems: "center",
-  flexDirection: "column", // Ensure vertical stacking for responsiveness
+  flexDirection: "column", 
   padding: "15px 20px",
   backgroundColor: "#282c34",
   zIndex: 1000,
@@ -82,36 +82,35 @@ const overlayStyle = `
 const mediaStyles = `
   ${overlayStyle}
   
-  /* Responsive layout for screens below 768px */
   @media (max-width: 768px) {
     nav {
-      flex-direction: column; /* Stack items vertically */
-      align-items: center; /* Center items */
+      flex-direction: column;
+      align-items: center;
       padding: 15px;
     }
 
     h1 {
       margin-bottom: 15px;
-      text-align: center; /* Center the logo */
-      font-size: 8vw; /* Scale down the h1 size */
+      text-align: center;
+      font-size: 8vw;
     }
 
     div {
       display: flex;
-      flex-wrap: wrap; /* Allow wrapping */
-      justify-content: center; /* Center links */
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 15px;
-      width: 100%; /* Ensure full width */
-      max-width: 100%; /* Prevent overflow */
-      padding: 10px; /* Add padding for spacing */
+      width: 100%;
+      max-width: 100%;
+      padding: 10px;
     }
 
     div a {
-      font-size: 5vw; /* Scale down link font size */
-      flex-basis: calc(50% - 30px); /* Ensure 2 links per row */
-      text-align: center; /* Center the link text */
+      font-size: 5vw;
+      flex-basis: calc(50% - 30px);
+      text-align: center;
       box-sizing: border-box;
-      padding: 10px; /* Space around each link */
+      padding: 10px;
     }
   }
 `;
@@ -128,9 +127,9 @@ const linksContainerStyle = {
   display: "flex",
   justifyContent: "center",
   gap: "15px",
-  flexWrap: "wrap", // Allow links to wrap
-  width: "100%", // Make container full width
-  maxWidth: "100%", // Prevent overflow
+  flexWrap: "wrap",
+  width: "100%",
+  maxWidth: "100%",
   zIndex: 1001,
 };
 

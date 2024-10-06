@@ -28,7 +28,7 @@ const footerStyle = {
   alignItems: "center",
   padding: "20px",
   backgroundColor: "#282c34",
-  zIndex: 1000, // Ensures the footer stays on top of other content
+  zIndex: 1000, 
 };
 
 const iconStyle = {

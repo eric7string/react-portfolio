@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 export default function Portfolio() {
-  // Assuming you have an array of project objects with name, description, imageUrl, and projectUrl
   const projects = [
     {
       name: 'Weather Dashboard',
@@ -38,11 +37,9 @@ export default function Portfolio() {
       description: 'TBD',
       imageUrl: './images/mystery2.jpg',
       projectUrl: 'https://www.github.com/eric7string'
-    },
-    // Add other project objects here
+    }
   ];
 
-  // Track hover state for each project
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
@@ -54,7 +51,7 @@ export default function Portfolio() {
         minHeight: '100vh',
         width: '100vw',
         boxSizing: 'border-box',
-        paddingTop: window.innerWidth >= 979 ? '160px' : window.innerWidth < 575 ? '260px' : '0px', // Add padding top when width >= 979px or below 575px
+        paddingTop: window.innerWidth >= 979 ? '160px' : window.innerWidth < 575 ? '260px' : '0px',
       }}
     >
       <div
@@ -74,10 +71,10 @@ export default function Portfolio() {
           style={{
             display: 'flex',
             flexWrap: 'wrap',
-            justifyContent: window.innerWidth < 768 ? 'center' : 'space-around', // Center on mobile
+            justifyContent: window.innerWidth < 768 ? 'center' : 'space-around',
             gap: '20px',
             marginTop: '20px',
-            flexDirection: window.innerWidth < 575 ? 'column' : window.innerWidth < 768 ? 'column' : 'row', // Stack in column on mobile
+            flexDirection: window.innerWidth < 575 ? 'column' : window.innerWidth < 768 ? 'column' : 'row',
           }}
         >
           {projects.map((project, index) => (
@@ -86,14 +83,14 @@ export default function Portfolio() {
               key={index}
               style={{
                 position: 'relative',
-                width: window.innerWidth < 575 ? '90%' : window.innerWidth < 768 ? '90%' : '300px', // Full-width images below 575px
-                height: window.innerWidth < 575 ? 'auto' : window.innerWidth < 768 ? 'auto' : '225px', // Maintain aspect ratio
+                width: window.innerWidth < 575 ? '90%' : window.innerWidth < 768 ? '90%' : '300px',
+                height: window.innerWidth < 575 ? 'auto' : window.innerWidth < 768 ? 'auto' : '225px',
                 overflow: 'hidden',
                 textDecoration: 'none',
                 color: 'inherit',
               }}
-              onMouseEnter={() => setHoveredIndex(index)} // Set hover index on enter
-              onMouseLeave={() => setHoveredIndex(null)} // Clear hover index on leave
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
             >
               <img
                 src={project.imageUrl}
@@ -103,7 +100,7 @@ export default function Portfolio() {
                   height: '100%',
                   objectFit: 'cover',
                   transition: 'opacity 0.5s ease',
-                  opacity: hoveredIndex === index ? 0.3 : 1, // Fade effect on hover
+                  opacity: hoveredIndex === index ? 0.3 : 1,
                 }}
               />
               <div
@@ -113,12 +110,12 @@ export default function Portfolio() {
                   left: 0,
                   width: '100%',
                   height: '100%',
-                  backgroundColor: 'rgba(0, 0, 0, 0.5)', // Black background with transparency
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  opacity: hoveredIndex === index ? 1 : 0, // Show text on hover
+                  opacity: hoveredIndex === index ? 1 : 0,
                   transition: 'opacity 0.5s ease',
                 }}
               >

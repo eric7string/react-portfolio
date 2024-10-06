@@ -6,19 +6,19 @@ export default function About() {
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: '100vh',
-        width: '100vw', // Use full viewport width
-        boxSizing: 'border-box', // Ensure padding is considered within the width
+        width: '100vw',
+        boxSizing: 'border-box',
       }}
     >
       <div
         style={{
           display: 'flex',
-          flexDirection: 'column', // Stacks elements vertically
-          alignItems: 'center', // Centers content
-          padding: '0 20px', // Adds padding to the sides
-          maxWidth: '800px', // Limits the width of the content
-          width: '100%', // Ensures content scales with max width
-          boxSizing: 'border-box', // Ensure padding is considered within the width
+          flexDirection: 'column',
+          alignItems: 'center',
+          padding: '0 20px',
+          maxWidth: '800px',
+          width: '100%',
+          boxSizing: 'border-box',
         }}
       >
         <img src="\images\avatar-522.jpg" alt="Eric Neff" style={{ width: "100%", maxWidth: "200px", borderRadius: "50%", marginTop: "75px" }} />

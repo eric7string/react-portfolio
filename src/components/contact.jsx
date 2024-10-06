@@ -4,7 +4,6 @@ export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 485);
 
- 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 485);
     window.addEventListener("resize", handleResize);
@@ -30,7 +29,6 @@ export default function Contact() {
     }
   };
 
-  
   const adjustedFormStyle = {
     ...formStyle,
     maxWidth: isMobile ? "480px" : "640px",
@@ -61,62 +59,62 @@ export default function Contact() {
 
   return (
     <div
-    style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minHeight: '100vh',
-      width: '100vw', // Use full viewport width
-      boxSizing: 'border-box', // Ensure padding is considered within the width
-    }}
-  >
-    <div
       style={{
         display: 'flex',
-        flexDirection: 'column', // Stacks elements vertically
-        alignItems: 'center', // Centers content
-        padding: '0 20px', // Adds padding to the sides
-        maxWidth: '800px', // Limits the width of the content
-        width: '100%', // Ensures content scales with max width
-        boxSizing: 'border-box', // Ensure padding is considered within the width
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '100vh',
+        width: '100vw',
+        boxSizing: 'border-box',
       }}
     >
-    <form style={adjustedFormStyle}>
-      <div style={inputContainerStyle}>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleInputChange}
-          onBlur={handleBlur}
-          style={adjustedInputStyle}
-        />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          padding: '0 20px',
+          maxWidth: '800px',
+          width: '100%',
+          boxSizing: 'border-box',
+        }}
+      >
+        <form style={adjustedFormStyle}>
+          <div style={inputContainerStyle}>
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              onBlur={handleBlur}
+              style={adjustedInputStyle}
+            />
+          </div>
+          <div style={inputContainerStyle}>
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              onBlur={handleBlur}
+              style={adjustedInputStyle}
+            />
+          </div>
+          <div style={inputContainerStyle}>
+            <label htmlFor="message">Message:</label>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              onBlur={handleBlur}
+              style={adjustedTextAreaStyle}
+            />
+          </div>
+          <button type="submit" style={adjustedButtonStyle}>Submit</button>
+        </form>
       </div>
-      <div style={inputContainerStyle}>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-          onBlur={handleBlur}
-          style={adjustedInputStyle}
-        />
-      </div>
-      <div style={inputContainerStyle}>
-        <label htmlFor="message">Message:</label>
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleInputChange}
-          onBlur={handleBlur}
-          style={adjustedTextAreaStyle}
-        />
-      </div>
-      <button type="submit" style={adjustedButtonStyle}>Submit</button>
-    </form>
-    </div>
     </div>
   );
 }
