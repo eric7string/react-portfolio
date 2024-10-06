@@ -1,7 +1,9 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
-export default function Navbar({ activeLink, handleLinkChange }) {
- 
+export default function Navbar({ handleLinkChange }) {
+  const location = useLocation();
+  const activeLink = location.pathname; // Get the current path
 
   return (
     <>
@@ -49,13 +51,13 @@ const navStyle = {
   left: 0,
   width: "100%",
   display: "flex",
-  justifyContent: "space-between",
+  justifyContent: "center", // Center all content
   alignItems: "center",
+  flexDirection: "column", // Ensure vertical stacking for responsiveness
   padding: "15px 20px",
   backgroundColor: "#282c34",
   zIndex: 1000,
-  flexWrap: "wrap",
-  height: "155px",
+  height: "auto",
   backgroundImage: "url('/images/fretboard.jpg')",
   backgroundSize: "cover",
   backgroundPosition: "center",
@@ -79,23 +81,37 @@ const overlayStyle = `
 
 const mediaStyles = `
   ${overlayStyle}
+  
+  /* Responsive layout for screens below 768px */
   @media (max-width: 768px) {
     nav {
-      flex-direction: column;
-      align-items: center;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items */
       padding: 15px;
     }
 
     h1 {
-      margin-bottom: 10px;
-      text-align: center;
-      font-size: 37.5px;
+      margin-bottom: 15px;
+      text-align: center; /* Center the logo */
+      font-size: 8vw; /* Scale down the h1 size */
     }
 
     div {
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
+      display: flex;
+      flex-wrap: wrap; /* Allow wrapping */
+      justify-content: center; /* Center links */
+      gap: 15px;
+      width: 100%; /* Ensure full width */
+      max-width: 100%; /* Prevent overflow */
+      padding: 10px; /* Add padding for spacing */
+    }
+
+    div a {
+      font-size: 5vw; /* Scale down link font size */
+      flex-basis: calc(50% - 30px); /* Ensure 2 links per row */
+      text-align: center; /* Center the link text */
+      box-sizing: border-box;
+      padding: 10px; /* Space around each link */
     }
   }
 `;
@@ -110,13 +126,12 @@ const logoStyle = {
 
 const linksContainerStyle = {
   display: "flex",
-  justifyContent: "space-evenly",
+  justifyContent: "center",
   gap: "15px",
-  flexGrow: 1,
+  flexWrap: "wrap", // Allow links to wrap
+  width: "100%", // Make container full width
+  maxWidth: "100%", // Prevent overflow
   zIndex: 1001,
-  flexWrap: "wrap",
-  boxSizing: "border-box",
-  maxWidth: "100%",
 };
 
 const linkStyle = {
