@@ -117,7 +117,7 @@ const mediaStyles = `
 
 const logoStyle = {
   margin: 0,
-  color: "#fff",
+  color: "#fff7f7",
   fontSize: "45px",
   zIndex: 1001,
   textShadow: "2px 2px 5px black",
@@ -134,7 +134,7 @@ const linksContainerStyle = {
 };
 
 const linkStyle = {
-  color: "#fff",
+  color: "#C68FE6",
   textDecoration: "none",
   fontSize: "27px",
   textShadow: "2px 2px 5px black",
@@ -143,5 +143,5 @@ const linkStyle = {
 const activeLinkStyle = {
   ...linkStyle,
   fontWeight: "bold",
-  borderBottom: "2px solid #fff",
+  borderBottom: "2px solid #C68FE6",
 };

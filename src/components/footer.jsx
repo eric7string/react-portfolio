@@ -27,7 +27,7 @@ const footerStyle = {
   justifyContent: "center",
   alignItems: "center",
   padding: "20px",
-  backgroundColor: "#282c34",
+  backgroundColor: "#522258",
   zIndex: 1000, 
 };
 

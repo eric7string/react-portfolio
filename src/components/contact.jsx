@@ -32,29 +32,29 @@ export default function Contact() {
   const adjustedFormStyle = {
     ...formStyle,
     maxWidth: isMobile ? "480px" : "640px",
-    padding: isMobile ? "24px" : "32px",
-    gap: isMobile ? "18px" : "24px",
+    padding: isMobile ? "19.2px" : "25.6px", // Reduced padding by 20%
+    gap: isMobile ? "14.4px" : "19.2px", // Reduced gap by 20%
     border: isMobile ? "1.2px solid #ccc" : "1.6px solid #ccc",
-    borderRadius: isMobile ? "9.6px" : "12.8px",
+    borderRadius: isMobile ? "7.6px" : "10.2px", // Reduced border radius by 20%
   };
 
   const adjustedInputStyle = {
     ...inputStyle,
-    padding: isMobile ? "12px" : "16px",
-    fontSize: isMobile ? "19.2px" : "25.6px",
-    borderRadius: isMobile ? "4.8px" : "6.4px",
+    padding: isMobile ? "9.6px" : "12.8px", // Reduced padding by 20%
+    fontSize: isMobile ? "15.4px" : "20.5px", // Reduced font size by 20%
+    borderRadius: isMobile ? "3.8px" : "5.1px", // Reduced border radius by 20%
   };
 
   const adjustedTextAreaStyle = {
     ...adjustedInputStyle,
-    height: isMobile ? "120px" : "160px",
+    height: isMobile ? "96px" : "128px", // Reduced height by 20%
   };
 
   const adjustedButtonStyle = {
     ...buttonStyle,
-    padding: isMobile ? "12px" : "16px",
-    fontSize: isMobile ? "19.2px" : "25.6px",
-    borderRadius: isMobile ? "4.8px" : "6.4px",
+    padding: isMobile ? "9.6px" : "12.8px", // Reduced padding by 20%
+    fontSize: isMobile ? "15.4px" : "20.5px", // Reduced font size by 20%
+    borderRadius: isMobile ? "3.8px" : "5.1px", // Reduced border radius by 20%
   };
 
   return (
@@ -122,12 +122,12 @@ export default function Contact() {
 const formStyle = {
   display: "flex",
   flexDirection: "column",
-  gap: "24px",
+  gap: "19.2px",
   maxWidth: "640px",
-  margin: "32px auto",
-  padding: "32px",
+  margin: "25.6px auto", // Reduced margin by 20%
+  padding: "25.6px", // Reduced padding by 20%
   border: "1.6px solid #ccc",
-  borderRadius: "12.8px",
+  borderRadius: "10.2px", // Reduced border radius by 20%
 };
 
 const inputContainerStyle = {
@@ -136,17 +136,17 @@ const inputContainerStyle = {
 };
 
 const inputStyle = {
-  padding: "16px",
-  fontSize: "25.6px",
+  padding: "12.8px", // Reduced padding by 20%
+  fontSize: "20.5px", // Reduced font size by 20%
   marginTop: "8px",
-  borderRadius: "6.4px",
+  borderRadius: "5.1px", // Reduced border radius by 20%
   border: "1.6px solid #ccc",
 };
 
 const buttonStyle = {
-  padding: "16px",
-  fontSize: "25.6px",
-  borderRadius: "6.4px",
+  padding: "12.8px", // Reduced padding by 20%
+  fontSize: "20.5px", // Reduced font size by 20%
+  borderRadius: "5.1px", // Reduced border radius by 20%
   border: "none",
   cursor: "pointer",
   backgroundColor: "#282c34",
